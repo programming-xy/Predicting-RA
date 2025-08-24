@@ -24,6 +24,13 @@ def load_model_and_data(model_config):
         
         # 处理特征名称（清理空行和空白字符）
         feature_names = [line.strip() for line in content.splitlines() if line.strip()]
+
+        # 在读取 feature_names 后，增加替换逻辑
+        feature_names = [
+            line.strip().replace('['Î”X']', 'ΔX')  # 替换特定乱码
+            for line in content.splitlines() 
+            if line.strip()
+        ]
         
         # 3. 读取训练数据并验证特征列
         X_train = pd.read_csv(model_config["train_data_path"])
