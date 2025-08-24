@@ -1,0 +1,6 @@
+Dist
+TCd
+ACd
+TCr
+pH
+CEC
