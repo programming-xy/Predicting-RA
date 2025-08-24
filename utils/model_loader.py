@@ -30,7 +30,7 @@ def load_model_and_data(model_config):
             # 3. 强制修复ΔX乱码（根据实际乱码调整替换规则）
             #    示例：常见乱码形式（需根据报错调整）
             feature_names = [
-                name.replace('['Î”X']', 'ΔX')  # 匹配报错中的乱码 [î\x94X]
+                name.replace('Î”X', 'ΔX')  # 匹配报错中的乱码 [î\x94X]
                    .replace('ï¿¥X', 'ΔX')     # 其他常见乱码形式
                    .replace('&#916;X', 'ΔX')  # HTML实体编码
                 for name in feature_names
